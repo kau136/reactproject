@@ -1,28 +1,43 @@
 import { Component } from "react";
+import axios from "axios";
 class Answer_Sheet extends Component{
     constructor() {
         super()
         this.state = {
-          'Year': '',
-          'Branch': '',
-          'Subject': '',
-          'Add_file':'',
+          'year': '',
+          'branch': '',
+          'subject': '',
+          'add_file':'',
+          'message':'',
           'isloggedin': false
     
         }
         this.handleChangeFields = this.handleChangeFields.bind(this)
       }
       handleDemo = () => {
-        if (this.state.Year && this.state.Branch) {
-          this.setState({ isloggedin: true })
-        }
-        else {
-          alert("not logged in")
-        }
-        alert(this.state.Year)
-        alert(this.state.Branch)
-        alert(this.state.Subject)
-        alert(this.state.Add_file)
+        const year = this.state.year;
+        const branch = this.state.branch;
+        const subject = this.state.subject;
+        const add_file = this.state.add_file;
+        const data = { year,branch,subject,add_file}
+        axios.get('http://localhost/answer.php', { params: data }).then(kalu => {
+            console.log(kalu);
+            this.setState({
+                message: kalu.data.response,
+            })
+        }).catch(err => {
+            console.log('failed')
+        })
+        // if (this.state.Year && this.state.Branch) {
+        //   this.setState({ isloggedin: true })
+        // }
+        // else {
+        //   alert("not logged in")
+        // }
+        // alert(this.state.Year)
+        // alert(this.state.Branch)
+        // alert(this.state.Subject)
+        // alert(this.state.Add_file)
         // console.log(this.state.Year)
         // console.log(this.state.Branch)
         // console.log(this.state.Subject)
@@ -42,23 +57,23 @@ class Answer_Sheet extends Component{
               <input type="checkbox" id="chk" aria-hidden="true" />
     
               <div class="signup">
-              <form onSubmit={this.handleDemo}>
+              <form  onSubmit={this.handleDemo} encType="multipart/form-data">
                   <label for="chk" aria-hidden="true">Answer Sheet Upload</label>
-                  <select name="Year" value={this.state.Year} onChange={this.handleChangeFields}  required="">
+                  <select name="year" value={this.state.year} onChange={this.handleChangeFields}  required="">
                         <option>Select Year</option>
                         <option>First Year</option>
                         <option>Second Year</option>
                         <option>Third Year</option>
                         <option>Final Year</option>
                     </select>
-                    <select name="Branch" value={this.state.Branch} onChange={this.handleChangeFields}  required="">
+                    <select name="branch" value={this.state.branch} onChange={this.handleChangeFields}  required="">
                         <option>Select Branch</option>
                         <option>CS</option>
                         <option>EE</option>
                         <option>CE</option>
                         <option>EL</option>
                     </select>
-                    <select name="Subject" value={this.state.Subject} onChange={this.handleChangeFields}  required="">
+                    <select name="subject" value={this.state.subject} onChange={this.handleChangeFields}  required="">
                         <option>Select Subject</option>
                         <option>Compiler Design</option>
                         <option>DBMS</option>
@@ -66,10 +81,12 @@ class Answer_Sheet extends Component{
                         <option>Computer Graphics</option>
                         <option>Machine Learning</option>
                     </select>
-                    <input type="file" name="Add_file" value={this.state.Add_file} onChange={this.handleChangeFields} required="" />    
+                    <input type="file" name="add_file" value={this.state.add_file} onChange={this.handleChangeFields} required="" />    
                     <button>Submit</button>
                   </form>
-                
+                  {
+                        this.state.message
+                        }
     
               </div>
               <div class="login"/>	

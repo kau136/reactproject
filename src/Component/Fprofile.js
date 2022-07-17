@@ -1,5 +1,5 @@
 import { Component } from "react";
-import './Fprofile.css';
+// import './Fprofile.css';
 // import img1 from'./C:\Users\ASUS\bhalu\src\OIP.jpeg'
 class Fprofile extends Component {
     constructor() {

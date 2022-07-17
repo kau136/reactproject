@@ -7,7 +7,11 @@ import "./index.css";
 import Question_sheet from "./Component/Question_Sheet";
 import Display from "./Component/Display";
 import Fprofile from "./Component/Fprofile";
-
+import Registration2 from "./Component/Registration2";
+import Profile1 from "./Component/Profile1";
+import Profile2 from "./Component/Profile2";
+import Profile3 from "./Component/Profile3";
+import Display2 from "./Component/Display2";
 import Faculty from "./Component/Faculty";
 // import Swap from './Swap';
 // import Dashbord3 from './Dashbord3'
@@ -20,15 +24,22 @@ import Answer_Sheet from "./Component/Answer_Sheet";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Faculty/> 
+    {/* <Profile1/> */}
+    <Profile2/>
+    {/* <Profile3/> */}
+
+     {/* <Registration2/>  */}
+     {/* <Login/> */}
+    {/* <Faculty/>  */}
     {/* <Fprofile/> */}
     {/* <Display/> */}
-    <MainFile/>
+    {/* <Display2/> */}
+    {/* <MainFile/> */}
     {/* <Teacherdash/> */}
     {/* <Admindash/> */}
     {/* <Question_sheet/>
     <Answer_Sheet/>
-    <Login/>
+   
     <Faculty/> */}
     {/* <Profile/>
     <Dashbord3/>
@@ -43,9 +54,6 @@ root.render(
     <Dashbord/>
     <Admin/>
     <Teacher/>
-    
-    <Registration2/> 
-   
     <Upload/>
     <Display/>
     <Result/>  */}

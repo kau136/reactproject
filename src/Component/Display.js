@@ -1,6 +1,6 @@
 import { Component } from "react";
 import './Display.css';
-// import './Question.css';
+import './Question.css';
 // import './Login.css';
 class Display extends Component {
   render() {

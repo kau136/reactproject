@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Admindash from "./Admindash";
+import axios from "axios";
 // import './Login.css';
 import Teacherdash from "./Teacherdash";
 class Login extends Component{
@@ -9,13 +10,26 @@ class Login extends Component{
         this.state={
             'email':'',
             'password':'',
-            'Role':'',
+            'role':'',
             'isloggedin':false
 
         }
         this.handleChangeFields=this.handleChangeFields.bind(this)
     }
     handleDemo=()=>{
+        const t1 = this.state.email;
+        const t2 = this.state.password;
+        const t3 = this.state.role;
+        const data = { t1, t2 ,t3}
+        axios.get('http://localhost/login.php', { params: data }).then(kalu => {
+            console.log(kalu);
+            this.setState({
+                message: kalu.data.response,
+            })
+        }).catch(err => {
+            console.log('failed')
+        })
+
         if(this.state.Role==='Admin'){
             this.setState({isloggedin:true})
         }
@@ -26,9 +40,9 @@ class Login extends Component{
         else {
             alert("not logged in")
         }
-        alert(this.state.email)
-        alert(this.state.password)
-        alert(this.state.Role)
+        // alert(this.state.email)
+        // alert(this.state.password)
+        // alert(this.state.Role)
         // console.log(this.state.email)
         // console.log(this.state.password)
         // console.log(this.state.Role)
@@ -50,7 +64,7 @@ class Login extends Component{
 					<label for="chk" aria-hidden="true">Login</label>
 					<input type="email" name="email" value={this.state.email} onChange={this.handleChangeFields} placeholder="Email" required=""/>
 					<input type="password" name="password" value={this.state.password} onChange={this.handleChangeFields}  placeholder="Password" required=""/>
-					<select name="Role" value={this.state.Role} onChange={this.handleChangeFields}  required="">
+					<select name="role" value={this.state.role} onChange={this.handleChangeFields}  required="">
                         <option>Select Role</option>
                         <option>Admin</option>
                         <option>Teacher</option>

@@ -1,5 +1,4 @@
 import { Component } from "react";
-// const Axios = require('axios');
 import axios from "axios";
 import './Login.css';
 class Faculty extends Component {
@@ -22,10 +21,10 @@ class Faculty extends Component {
         const t3 = this.state.Address;
         const t4 = this.state.Specialization;
         const data = { t1, t2, t3, t4 }
-        axios.get('http://localhost:3000/faculty', { params: data }).then(kalu => {
+        axios.get('http://localhost/faculty.php', { params: data }).then(kalu => {
             console.log(kalu);
             this.setState({
-                message: kalu.data.response
+                message: kalu.data.response,   
             })
         }).catch(err => {
             console.log('failed')
@@ -75,6 +74,9 @@ class Faculty extends Component {
                             </select>
                             <button onClick={this.handleChangeFields}>Submit</button>
                         </form>
+                        {
+                        console.log(this.state.message)
+                        }
 
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Fprofile from './Component/Fprofile';
-import Display from './Component/Display';
+import Profile3 from './Component/Profile3';
+import Display2 from './Component/Display2';
 import Faculty from "./Component/Faculty"
 import Question_sheet from "./Component/Question_Sheet";
 import Answer_sheet from "./Component/Answer_Sheet";
@@ -18,13 +18,14 @@ class MainFile extends Component {
                 {/* <Login /> */}
                 {/* <Admindash/> */}
 
-                {/* <Teacherdash/> */}
+                <Teacherdash/>
                 <Routes>
+                <Route excet path="/" element={<Answer_sheet />} /> 
                     <Route path="/admin/answer" element={<Answer_sheet />} />
-                    <Route path="/admin/faculty" element={<Faculty />} />
+                    <Route excet path="/admin/faculty" element={<Faculty />} />
                     <Route path="/admin/question" element={<Question_sheet />} />
-                    <Route path="/display" element={<Display />} />
-                    <Route path="/profile" element={<Fprofile />} />
+                    <Route path="/display" element={<Display2 />} />
+                    <Route path="/profile" element={<Profile3 />} />
                     <Route path="/logout" element={<Logout />} />
                 </Routes>
             </BrowserRouter>
