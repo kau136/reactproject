@@ -1,6 +1,5 @@
 import { Component } from "react";
-// import './Profile2.css';
-import 'C:/Users/Hemant Kaushik/kalu/node_modules/bootstrap/dist/css/bootstrap.min.css'
+import './Profile2.css';
 class Profile2 extends Component {
 
     render() {
@@ -22,8 +21,8 @@ class Profile2 extends Component {
                                             <div class="mt-3">
                                                 <h4>Kaushik</h4>
                                                 <p class="text-secondary mb-1">Full Stack Developer</p>
-                                                <button class="btn btn-primary">Follow</button>
-                                                <button class="btn btn-outline-primary">Message</button>
+                                                 <button class="btn btn-success">Follow</button>
+                                                <button class="btn btn-outline-primary">Message</button> 
                                             </div>
                                         </div>
                                     </div>
@@ -78,11 +77,11 @@ class Profile2 extends Component {
                                                     </div>
                                                 </div>
                                                 <hr/>
-                                                    <div class="row">
+                                                    {/* <div class="row">
                                                         <div class="col-sm-12">
                                                             <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
                                                         </div>
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                             </div>
                                     </div>

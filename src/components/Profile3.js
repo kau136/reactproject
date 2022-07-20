@@ -51,8 +51,8 @@ class Profile3 extends Component {
                                                         <h6 class="text-muted f-w-400">9520010920</h6>
                                                     </div>
                                                 </div>
-                                                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Projects</h6>
-                                                <div class="row">
+                                                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600"></h6>
+                                                {/* <div class="row">
                                                     <div class="col-sm-6">
                                                         <p class="m-b-10 f-w-600">Recent</p>
                                                         <h6 class="text-muted f-w-400">Sam Disuja</h6>
@@ -61,12 +61,12 @@ class Profile3 extends Component {
                                                         <p class="m-b-10 f-w-600">Most Viewed</p>
                                                         <h6 class="text-muted f-w-400">Dinoter husainm</h6>
                                                     </div>
-                                                </div>
-                                                <ul class="social-link list-unstyled m-t-40 m-b-10">
+                                                </div> */}
+                                                {/* <ul class="social-link list-unstyled m-t-40 m-b-10">
                                                     <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="facebook" data-abc="true"><i class="mdi mdi-facebook feather icon-facebook facebook" aria-hidden="true"></i></a></li>
                                                     <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="twitter" data-abc="true"><i class="mdi mdi-twitter feather icon-twitter twitter" aria-hidden="true"></i></a></li>
                                                     <li><a href="#!" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="instagram" data-abc="true"><i class="mdi mdi-instagram feather icon-instagram instagram" aria-hidden="true"></i></a></li>
-                                                </ul>
+                                                </ul> */}
                                             </div>
                                         </div>
                                     </div>

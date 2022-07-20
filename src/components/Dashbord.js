@@ -1,36 +1,26 @@
 import { Component } from "react";
-import './Login.css';
-class Dashbord extends Component{
-    constructor(){
-        super()
-        this.state={
-            'ADMIN':'',
-            'TEACHER':''   
-        }
-    }
-    render(){
-        return (
-            <div>
-
-                     
-<div class="main">  	
-
-
-			<div class="signup">
-				    
-					<label for="chk" aria-hidden="true">Dashbord</label>
-					
-					<button>ADMIN</button>
-					<button>TEACHER</button>
-			
-				
-			</div>
-            <div class="login"/>
-
-		
-	</div>
-            </div>
-        )
-    }
-};
+import "./Dashbord.css";
+import 'C:/Users/Hemant Kaushik/kalu/node_modules/bootstrap/dist/css/bootstrap.min.css'
+class Dashbord extends Component {
+  render() {
+    return (
+      <div>
+        <nav>
+          <div class="logo">Kaushik</div>
+          <ul>
+            <li>
+              <a href="/login">Login</a>
+            </li>
+            <li>
+              <a href="/signup">SignUp</a>
+            </li>
+            <li>
+              <a href="/dashbord">Dashbord</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    );
+  }
+}
 export default Dashbord;

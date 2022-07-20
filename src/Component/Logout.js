@@ -1,10 +1,25 @@
 import { Component } from "react";
-class Logout extends Component{
+import Login from "./Login";
+class Logout extends Component {
+    constructor() {
+        super()
+        this.state = {
+            'isloggedin': false
+        }
+    }
+    handleDemo = (e) => {
+        this.setState({ isloggedin: true })
+        e.preventDefault();
+    }
 
-    render(){
-        return (
+    render() {
+        return (this.state.isloggedin ? <Login /> :
             <div>
-               <h1>Log out successfully</h1>
+                <form onSubmit={this.handleDemo}>
+                    <h1>Log out successfully</h1>
+                    <button>BACK TO LOGIN</button>
+                </form>
+
             </div>
         )
     }

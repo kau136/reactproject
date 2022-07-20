@@ -1,12 +1,11 @@
- body{
+body{
 	margin: 0;
 	padding: 0;
-	/* display: flex; */
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	/* background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); */
+	
 }  
 .main{
 	width: auto;
@@ -24,7 +23,8 @@
 	position: relative;
 	width:100%;
 	height: 100%;
-    background: linear-gradient(to bottom, #e14050, #5a5f60, #6a766b);
+	text-align: center;
+	background-color: #195f6b;
 }
 label{
 	color: rgb(248, 243, 243);
@@ -37,7 +37,7 @@ label{
 	cursor: pointer;
 	transition: .5s ease-in-out;
 }
-input{
+input,select{
 	width: 25%;
 	height: 40px;
 	background: #e0dede;
@@ -82,12 +82,3 @@ button:hover{
 	transform: scale(.6);
 }
 
-/* #chk:checked ~ .login{
-	transform: translateY(-500px);
-}
-#chk:checked ~ .login label{
-	transform: scale(1);	
-}
-#chk:checked ~ .signup label{
-	transform: scale(.6);
-} */

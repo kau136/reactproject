@@ -1,31 +1,78 @@
 import { Component } from "react";
-import './Login.css';
+import Admindash from "./Admindash";
+import axios from "axios";
+import 'C:/Users/Hemant Kaushik/kalu/node_modules/bootstrap/dist/css/bootstrap.min.css'
+// import './Login.css';
+import Teacherdash from "./Teacherdash";
 class Login extends Component{
-    constructor(){
+    constructor()
+    {
         super()
         this.state={
-            'userName':'',
+            'email':'',
             'password':'',
-            'Date of birth':''
+            'role':'',
+            'isloggedin':false
+
         }
+        this.handleChangeFields=this.handleChangeFields.bind(this)
+    }
+    handleDemo=()=>{
+        // const t1 = this.state.email;
+        // const t2 = this.state.password;
+        // const t3 = this.state.role;
+        // const data = { t1, t2 ,t3}
+        // axios.get('http://localhost/login.php', { params: data }).then(kalu => {
+        //     console.log(kalu);
+        //     this.setState({
+        //         message: kalu.data.response,
+        //     })
+        // }).catch(err => {
+        //     console.log('failed')
+        // })
+
+        if(this.state.role==='Admin'){
+            this.setState({isloggedin:true})
+        }
+        else if(this.state.role==='Teacher')
+        {
+            this.setState({isloggedin:true})
+        }
+        else {
+            alert("not logged in")
+        }
+        // alert(this.state.email)
+        // alert(this.state.password)
+        // alert(this.state.Role)
+        // console.log(this.state.email)
+        // console.log(this.state.password)
+        // console.log(this.state.Role)
+    }
+    handleChangeFields=(event)=>{
+        this.setState({
+            ...this.state,
+            [event.target.name]:event.target.value
+        })
+        console.log(this.state,"formFilled")
     }
     render(){
-        return (
+        return (this.state.isloggedin?(this.state.role==='Teacher'?<Teacherdash/>:<Admindash/>):
             <div>
-               
-                <div class="main">  	
-		<input type="checkbox" id="chk" aria-hidden="true"/>
-
-			<div class="signup">
-				    
+            <div class="main">  	
+		    <input type="checkbox" id="chk" aria-hidden="true"/>
+                <div class="signup">
+				    <form onSubmit={this.handleDemo}>
 					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" name="email" placeholder="Email" required=""/>
-					<input type="password" name="pswd" placeholder="Password" required=""/>
-                    <input type="text" name="DOB" placeholder="Date Of Birth" required=""/>
-					<button>Login</button>
-			
-				
-			</div>
+					<input type="email" name="email" value={this.state.email} onChange={this.handleChangeFields} placeholder="Email" required=""/>
+					<input type="password" name="password" value={this.state.password} onChange={this.handleChangeFields}  placeholder="Password" required=""/>
+					<select name="role" value={this.state.role} onChange={this.handleChangeFields}  required="">
+                        <option>Select Role</option>
+                        <option>Admin</option>
+                        <option>Teacher</option>
+                    </select>
+                    <button>Login</button>
+                    </form>
+			    </div>
             <div class="login"/>	
 	</div>
   

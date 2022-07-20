@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Admindash from "./Admindash";
 import axios from "axios";
+import 'C:/Users/Hemant Kaushik/kalu/node_modules/bootstrap/dist/css/bootstrap.min.css'
 // import './Login.css';
 import Teacherdash from "./Teacherdash";
 class Login extends Component{
@@ -16,24 +17,24 @@ class Login extends Component{
         }
         this.handleChangeFields=this.handleChangeFields.bind(this)
     }
-    handleDemo=()=>{
-        const t1 = this.state.email;
-        const t2 = this.state.password;
-        const t3 = this.state.role;
-        const data = { t1, t2 ,t3}
-        axios.get('http://localhost/login.php', { params: data }).then(kalu => {
-            console.log(kalu);
-            this.setState({
-                message: kalu.data.response,
-            })
-        }).catch(err => {
-            console.log('failed')
-        })
+    handleDemo=(e)=>{
+        // const t1 = this.state.email;
+        // const t2 = this.state.password;
+        // const t3 = this.state.role;
+        // const data = { t1, t2 ,t3}
+        // axios.get('http://localhost/login.php', { params: data }).then(kalu => {
+        //     console.log(kalu);
+        //     this.setState({
+        //         message: kalu.data.response,
+        //     })
+        // }).catch(err => {
+        //     console.log('failed')
+        // })
 
-        if(this.state.Role==='Admin'){
+        if(this.state.role==='Admin'){
             this.setState({isloggedin:true})
         }
-        else if(this.state.Role==='Teacher')
+        else if(this.state.role==='Teacher')
         {
             this.setState({isloggedin:true})
         }
@@ -46,6 +47,7 @@ class Login extends Component{
         // console.log(this.state.email)
         // console.log(this.state.password)
         // console.log(this.state.Role)
+        e.preventDefault();
     }
     handleChangeFields=(event)=>{
         this.setState({
@@ -55,10 +57,10 @@ class Login extends Component{
         console.log(this.state,"formFilled")
     }
     render(){
-        return (this.state.isloggedin?(this.state.Role==='Teacher'?<Teacherdash/>:<Admindash/>):
+        return (this.state.isloggedin?(this.state.role==='Teacher'?<Teacherdash/>:<Admindash/>):
             <div>
-            <div class="main">  	
-		    <input type="checkbox" id="chk" aria-hidden="true"/>
+                <div class="main">  	
+		        <input type="checkbox" id="chk" aria-hidden="true"/>
                 <div class="signup">
 				    <form onSubmit={this.handleDemo}>
 					<label for="chk" aria-hidden="true">Login</label>
@@ -73,9 +75,9 @@ class Login extends Component{
                     </form>
 			    </div>
             <div class="login"/>	
-	</div>
+	        </div>
   
-            </div>
+        </div>
         )
     }
 };

@@ -2,7 +2,7 @@ import { Component } from "react";
 import './Display.css';
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import { useResolvedPath } from "react-router-dom";
+// import { useResolvedPath } from "react-router-dom";
 function Display() {
 
   // const [show,setShow]=useState(false);

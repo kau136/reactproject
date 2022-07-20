@@ -1,6 +1,7 @@
 import { Component } from "react";
-import './Evaluation.css';
+// import './Evaluation.css';
 import './Question.css';
+import 'C:/Users/Hemant Kaushik/kalu/node_modules/bootstrap/dist/css/bootstrap.min.css'
 class Evaluation extends Component{
     constructor(){
         super()

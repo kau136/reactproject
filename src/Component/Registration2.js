@@ -1,6 +1,7 @@
 import { Component } from "react";
 import './Login.css';
 import axios from "axios";
+import 'C:/Users/Hemant Kaushik/kalu/node_modules/bootstrap/dist/css/bootstrap.min.css'
 class Registration2 extends Component {
   constructor()
   {

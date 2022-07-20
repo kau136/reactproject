@@ -1,37 +1,14 @@
 // import axios from "axios";
 import { Component } from "react";
 import Axios from "axios";
-class Display2 extends Component {
+class Maindv extends Component {
     constructor() {
         super()
         this.state = {
+
             kalu: [],
         }
-    }
-    handleDemo=(e)=>{
-        const t1 = this.state.id;
-        const data = {t1}
-        Axios.get('http://localhost/display.php', { params: data }).then(kalu => {
-            console.log(kalu);
-            this.setState({
-                message: kalu.data.response,
-            })
-        }).catch(err => {
-            console.log('failed')
-        })
 
-        if(this.state.role==='Admin'){
-            this.setState({isloggedin:true})
-        }
-    
-        e.preventDefault();
-    }
-    handleChangeFields=(event)=>{
-        this.setState({
-            ...this.state,
-            [event.target.name]:event.target.value
-        })
-        console.log(this.state,"formFilled")
     }
     componentDidMount() {
         Axios.get("http://localhost/display.php")
@@ -91,4 +68,4 @@ class Display2 extends Component {
         )
     }
 };
-export default Display2;
+export default Maindv;
