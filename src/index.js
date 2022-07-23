@@ -4,13 +4,13 @@ import Admindash from "./Component/Admindash";
 import Teacherdash from "./Component/Teacherdash";
 import Login from "./Component/Login";
 import Maindv from "./Component/Maindv";
-import ImageUpload from "./Component/ImageUpload";
+import ImageUpload from "./components/ImageUpload";
 import FileUploadForm from "./Component/FileUpLoadForm";
 import "./index.css";
 import Question_sheet from "./Component/Question_Sheet";
 import Registration2 from "./Component/Registration2";
 // import Profile1 from "./Component/Profile1";
-// import Profile2 from "./Component/Profile2";
+import Profile2 from "./Component/Profile2";
 import Profile4 from "./Component/Profile4";
 import Display2 from "./Component/Display2";
 import Faculty from "./Component/Faculty";
@@ -26,7 +26,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <FileUploadForm/>
-    {/* <ImageUpload/> */}
+  
     {/* <Update/> */}
     {/* <Profile4 /> */}
     {/* <Maindv/> */}

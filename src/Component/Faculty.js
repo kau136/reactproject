@@ -30,20 +30,6 @@ class Faculty extends Component {
         }).catch(err => {
             console.log('failed')
         })
-
-        // if (this.state.Address && this.state.Phone) {
-        //     this.setState({ isloggedin: true })
-        // }
-        // else {
-        //     alert("not logged in")
-        // }
-        // alert(this.state.Name)
-        // alert(this.state.Phone)
-        // alert(this.state.Address)
-        // alert(this.state.Specialization)
-        // console.log(this.state.Address)
-        // console.log(this.state.Phone)
-        // console.log(this.state.Address)
     }
     handleChangeFields = (event) => {
         this.setState({

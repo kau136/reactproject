@@ -1,14 +1,20 @@
-// import axios from "axios";
+
 import { Component } from "react";
 import Axios from "axios";
+import Displaydata from "./Displaydata";
+import { Link } from "react-router-dom";
 class Display2 extends Component {
     constructor() {
         super()
         this.state = {
+            action:0,
+            isloggedin: false,
             kalu: [],
         }
     }
     handleDemo=(e)=>{
+        this.setState({ isloggedin: true });
+        this.setState({action:1})
         const t1 = this.state.id;
         const data = {t1}
         Axios.get('http://localhost/display.php', { params: data }).then(kalu => {
@@ -19,19 +25,11 @@ class Display2 extends Component {
         }).catch(err => {
             console.log('failed')
         })
-
-        if(this.state.role==='Admin'){
-            this.setState({isloggedin:true})
-        }
-    
         e.preventDefault();
     }
-    handleChangeFields=(event)=>{
-        this.setState({
-            ...this.state,
-            [event.target.name]:event.target.value
-        })
-        console.log(this.state,"formFilled")
+    abc=()=>
+    {
+        alert("welcome");
     }
     componentDidMount() {
         Axios.get("http://localhost/display.php")
@@ -41,11 +39,12 @@ class Display2 extends Component {
                 console.log(this.state.kalu)
             })
             .catch((err) => {
+                
                 console.log("Failed");
             });
     }
     render() {
-        return (
+        return (this.state.isloggedin?<Displaydata/>:
             <div>
                 <body>
                     <section class="ftco-section">
@@ -75,7 +74,10 @@ class Display2 extends Component {
                                                         <td>{ag.branch}</td>
                                                         <td>{ag.subject}</td>
                                                         <td>{ag.add_file}</td>
-                                                        <td><a href="http://localhost/display.php" class="btn btn-primary">Evaluate</a></td>
+                                                        {/* <td><Displaydata name={ag.id}/><a className="btn btn-info" onClick={this.handleDemo}>Select</a></td> */}
+                                                        {/* <Link to={{ pathname: "/evalu",  state:this.state.id }}>Register</Link> */}
+                                                      
+                                                        <td><Displaydata name={ag.id} /></td>
                                                     </tr>
                                                 )}
                                             </tbody>

@@ -31,9 +31,11 @@ class FileUploadForm extends React.Component {
             }
         });
     }
+     
       render() {
         return (
           <div className="container" style={{padding: 20}}>
+            
             <div className="row">
             <form onSubmit={ this.onSubmit } className="form-inline">
                 <div className="form-group">

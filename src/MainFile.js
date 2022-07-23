@@ -9,6 +9,7 @@ import Teacherdash from "./Component/Teacherdash";
 import Login from './Component/Login';
 import Logout from "./Component/Logout";
 import Admindash from "./Component/Admindash";
+import Displaydata from "./Component/Displaydata";
 
 
 class MainFile extends Component {
@@ -25,6 +26,7 @@ class MainFile extends Component {
                     <Route path="/admin/question" element={<Question_sheet />} />
                     <Route path="/display" element={<Display2 />} />
                     <Route path="/profile" element={<Profile4/>} />
+                    
                     <Route path="/logout" element={<Logout />} />
                 </Routes>
             </BrowserRouter>
